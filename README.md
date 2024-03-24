@@ -1,2 +1,2 @@
 # LeetCode-Answers
-This repo containes my LeetCode answers in python
+This repo containes my answers for different problems on LeetCode.
