@@ -7,4 +7,4 @@ class Solution:
             if complement in seen:
                 return [i,seen[complement]]
             seen[n]=i
-            i +=1
+            
