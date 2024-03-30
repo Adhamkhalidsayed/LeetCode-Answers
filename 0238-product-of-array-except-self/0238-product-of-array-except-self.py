@@ -2,7 +2,7 @@ class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         product= 1
         zero_count = nums.count(0)
-        
+    
         if zero_count < len(nums): 
             for num in nums:
                 if num != 0:
