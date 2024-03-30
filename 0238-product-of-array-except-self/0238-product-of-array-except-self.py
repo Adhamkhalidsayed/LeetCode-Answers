@@ -7,11 +7,10 @@ class Solution:
                 if num != 0:
                     product *= num
 
-        if (len(nums) == zero_count) or ((len(nums) > 2) and (len(nums)-zero_count == 1)):
+
+        if zero_count >= 2:
             return [0] * len(nums)
-        elif zero_count >= 2:
-            return [0] * len(nums)
-        elif zero_count > 0:
+        elif zero_count == 1:
             return [product if num == 0 else 0 for num in nums]
         else:
             return [product // num for num in nums]
