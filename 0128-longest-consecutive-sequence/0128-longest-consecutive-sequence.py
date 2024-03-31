@@ -1,21 +1,21 @@
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
+
         if not nums:
             return 0
 
-        num_dict = {}
+        nums_set = set(nums)
         max_length = 0
 
-        for num in nums:
-            if num not in num_dict:
-                left = num_dict.get(num - 1, 0)
-                right = num_dict.get(num + 1, 0)
+        for num in nums_set:
+            if num - 1 not in nums_set:
+                current_num = num
+                current_length = 1
 
-                current_length = left + right + 1
+                while current_num + 1 in nums_set:
+                    current_num += 1
+                    current_length += 1
+
                 max_length = max(max_length, current_length)
-
-                num_dict[num] = current_length
-                num_dict[num - left] = current_length
-                num_dict[num + right] = current_length
 
         return max_length
