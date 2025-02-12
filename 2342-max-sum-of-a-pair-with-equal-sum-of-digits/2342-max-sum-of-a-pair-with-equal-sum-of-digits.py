@@ -1,3 +1,4 @@
+import heapq
 class Solution:
     def maximumSum(self, nums: List[int]) -> int:
         D = defaultdict(list)
@@ -12,9 +13,6 @@ class Solution:
 
         result = -1
         for k in D:
-            if len(D[k]) >= 2: 
-                D[k].sort(reverse= True)
-                D[k] = D[k][:2]
-                result = max(result,sum(D[k]))
-
+            if len(D[k]) >= 2:
+                result = max(result,sum(heapq.nlargest(2,D[k])))
         return(result)
