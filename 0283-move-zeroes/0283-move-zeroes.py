@@ -3,13 +3,9 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        i = 0
-        countZero = 0
-        while i < len(nums):
-            if nums[i] != 0:
-                i+=1
-            else:
-                del nums[i]
-                countZero +=1
-        for i in range(countZero):
-            nums.append(0)
+        count = 0
+        while 0 in nums:
+            nums.remove(0)
+            count += 1
+        nums.extend([0]*count)
+        
