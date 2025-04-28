@@ -12,7 +12,6 @@ class Solution:
                 i = n
             elif n <= j:
                 j = n
-            elif n <= k:
-                k = n
+            else:
                 return True
         return False
