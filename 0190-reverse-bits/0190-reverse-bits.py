@@ -6,7 +6,6 @@ class Solution:
         for i in range(31,-1,-1):
             x = n & 1
             n = n >> 1
-            if x == 1:
-                num += x * (2**i)
+            num += x * (2**i)
         
         return num
